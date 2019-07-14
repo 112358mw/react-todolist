@@ -2,7 +2,6 @@ const defaultState ={
   inputValue: '',
   list: []
 };
-
 export default (state=defaultState, action) => {
   const newState = {...state};
   switch (action.type) {
@@ -15,6 +14,7 @@ export default (state=defaultState, action) => {
       return newState;
       case 'delete_item':
         newState.list.splice(action.index, 1);
+        return newState;
     default:
   }
   console.log(state, action);
